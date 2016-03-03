@@ -12,12 +12,16 @@ Tons of stuff is missing, including media assets. Bear with me as I learn myself
 Why?
 ---
 
-When developing enterprise search solutions over the last 10 years, my experience has consistently been that features crucial to findability never make it into the actual services. With rotten findability(1) the entire content management solution loses its usefulness. This repository tries to address the problem by being a starting point for teams building enterprise search solutions, showing UX and findability best practices, with an emphasis on:
+**The pain: Your client's employees can't find what they're looking for.** When developing enterprise search solutions over the last 10 years, my experience has consistently been that features crucial to findability never make it into the actual services. With rotten findability(1) the entire content/knowledge management solution loses its usefulness. 
+
+**The response: At first, a template around which to have a conversation about UX and findability.** This repository tries to address the problem by being a starting point for teams building enterprise search solutions, showing UX and findability best practices, with an emphasis on:
 
 * Disambiguation through 1) Result groups and 2) Autocomplete topics
 * Editorial maintenance
 * User added results & sources
 * User influenced relevancy & findability and
 * Findability reporting
+ 
+This project is in its infancy, so as of March ’16 it's just a seed for a conversation. If we're lucky it can become a [Pattern Lab](http://patternlab.io)-based library of components that can make a difference in enterprise content/knowledge management – and hopefully other search solutions.
 
 (1) Often 20% or worse in the «unstructed data behind the firewall» scenario
