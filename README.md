@@ -26,7 +26,7 @@ More on these points below.
 
 This project is in its infancy, so as of March ’16 it’s just a seed for a conversation. If we’re lucky it can become a [Pattern Lab](http://patternlab.io)-based library of components that can make a difference in enterprise content/knowledge management – and hopefully other search solutions.
 
-(1) Often 20% or worse in the «[unstructured data](https://en.wikipedia.org/wiki/Unstructured_data) behind the firewall» scenario
+<small>(1) Often 20% or worse in the «[unstructured data](https://en.wikipedia.org/wiki/Unstructured_data) behind the firewall» scenario</small>
 
 Focus areas
 ===
@@ -39,9 +39,11 @@ To [disambiguate](https://en.wikipedia.org/wiki/Word-sense_disambiguation) is to
 
 Best of breed search services (read: Google) uses multiple strategies to understand what a user really means. Some of these strategies are expressed as user experiences, and one of the best, the «[Google OneBox](http://searchengineland.com/meet-the-google-onebox-plus-box-direct-answers-the-10-pack-26706)», asks the user what content type she wants while framing the question as a set of example results. This strategy is obviously battle-tested literally billions of times per day through the main Google.com result page. And consider this: Even if you don’t click a OneBox, it is *still* valuable to you, because it took and entire category you wasn’t currently looking for, and put all those results inside a single one.
 
-However, although Google left the «10 blue links» concept behind more than 15 years ago, many «behind the firewall» solutions today are still lack this basic, yet extremely useful disambiguation strategy. Most enterprise search engines, Elasticsearch and SharePoint included(2), do not support the concept «out of the box». The [initial template] therefore focuses heavily on these types of results
+However, although Google left the «10 blue links» concept behind more than 15 years ago, many «behind the firewall» solutions today are still lack this basic, yet extremely useful disambiguation strategy. Most enterprise search engines, Elasticsearch and SharePoint included(2), do not support the concept «out of the box». The [initial template](http://bit.ly/results-mock-up-snapshot-feb-2016) therefore focuses heavily on these types of results.
 
-(2) SharePoint has OneBox results for employees out of the box. This is a huge findability win. In many installations is the only part of the SharePoint search that has user trust. However, I’m primarily focusing on the «unstructured data» part of enterprise search, and in that area, SharePoint consistently has very poor performance.
+A similar strategy should be used for the autocomplete when allowed. E.g., if the content is divided into topic sections, evaluate showing these in the autocomplete. See the template for examples.
+
+<small>(2) SharePoint has OneBox results for employees out of the box. This is a huge findability win. In many installations is the only part of the SharePoint search that has user trust. However, I’m primarily focusing on the «unstructured data» part of enterprise search, and in that area, SharePoint consistently has very poor performance.</small>
 
 User influenced relevancy & findability
 ---
