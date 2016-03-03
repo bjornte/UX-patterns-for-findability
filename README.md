@@ -1,4 +1,7 @@
-# search-UX-patterns
+Search UX patterns
+===
+
+**User experience templates for search front ends and findability reporting dashboards**
 
 At first a single template for a search engine result page (SERP). Over time hopefully a library?
 
