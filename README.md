@@ -22,7 +22,7 @@ Why?
 * Editorial maintenance
 * Findability reporting
  
-More on these points below.
+More on these points [below](#focus-areas).
 
 This project is in its infancy, so as of March ’16 it’s just a seed for a conversation. If we’re lucky it can become a [Pattern Lab](http://patternlab.io)-based library of components that can make a difference in enterprise content/knowledge management – and hopefully other search solutions.
 
