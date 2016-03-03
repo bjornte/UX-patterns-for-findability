@@ -60,3 +60,9 @@ In a work, editorial maintenance for enterprise search *sucks*. Admittedly, I mo
 Findability reporting
 ---
 Knowledge management is regarded as a critical success factor by many boards. However, the metrics they are served, if any, are shallow and glean too little insight. Let’s change that. Findability reporting should be transparent and actionable, available to everyone – from the individual employee, through team leaders and evangelists, all the way to the board.
+
+**Do you have documentation** of an enterprise search actually providing useful and trusted findability for unstructured data behind the firewall? Please get in touch and let me know! Big thanks in advance :-)
+
+Not a focus: Technical relevancy
+===
+There are a ton of resources covering technical relevancy. This is the main focus area of all of the search providers. I'll just add a single opinion: For publicly available textual («unstructured») content, [Google Custom Search](https://cse.google.com/) (CSE) will yield the best technical relevancy in the majority of the cases. I wouldn't consider challenging them. However, their presentation can be improved significantly, most notably with result groups, which CSE does not offer but which is used abundantly by Google.com, setting user expectations. So my suggestion is to use CSE for public, unstructured content, Elasticsearch (or your preferred alternative) for other sources, and hopefully this framework (as a basis) for presentation.
