@@ -11,7 +11,7 @@ At inception this repository is a single template for a search engine result pag
 >
 >*A disambiguation result, inspired by Google’s OneBoxes, allowing the user to state her intent.*
 
-Tons of stuff is missing, including media assets. Bear with me as I learn myself the basics of GutHub.
+Tons of stuff is missing, including media assets. Bear with me as I learn myself the basics of GitHub.
 
 Why?
 ---
