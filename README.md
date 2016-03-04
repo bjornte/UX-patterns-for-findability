@@ -12,7 +12,7 @@ Tons of stuff is missing, including media assets. Bear with me as I learn myself
 Why?
 ---
 
-**The pain: Your client’s employees can’t find what they’re looking for.** When developing enterprise search solutions over the last 10 years, my experience has consistently been that features crucial to findability never make it into the actual services. With rotten findability(1) the entire content/knowledge management solution loses its usefulness. 
+**The pain: Your client’s employees can’t find what they’re looking for.** When developing enterprise search solutions over the last 10 years, my experience has consistently been that features crucial to findability never make it into the actual services. With rotten findability (1) the entire content/knowledge management solution loses its usefulness. 
 
 **The response: At first, [a template](http://bit.ly/results-mock-up-snapshot-feb-2016) around which to have a conversation about UX and findability.** This repository tries to address the problem by being a starting point for teams building enterprise search solutions, showing UX and findability best practices, with an emphasis on:
 
@@ -26,7 +26,7 @@ More on these points [below](#focus-areas).
 
 This project is in its infancy, so as of March ’16 it’s just a seed for a conversation. If we’re lucky it can become a [Pattern Lab](http://patternlab.io)-based library of components that can make a difference in enterprise content/knowledge management – and hopefully other search solutions.
 
-<small>(1) Often 20% or worse in the «[unstructured data](https://en.wikipedia.org/wiki/Unstructured_data) behind the firewall» scenario</small>
+<small>(1) Often 20% or worse in the «[unstructured data](https://en.wikipedia.org/wiki/Unstructured_data) behind the firewall» scenario.</small>
 
 
 
@@ -41,7 +41,7 @@ To [disambiguate](https://en.wikipedia.org/wiki/Word-sense_disambiguation) is to
 
 Best of breed search services (read: Google) uses multiple strategies to understand what a user really means. Some of these strategies are expressed as user experiences, and one of the best, the «[Google OneBox](http://searchengineland.com/meet-the-google-onebox-plus-box-direct-answers-the-10-pack-26706)», asks the user what content type she wants while framing the question as a set of example results. This strategy is obviously battle-tested literally billions of times per day through the main Google.com result page. And consider this: Even if you don’t click a OneBox, it is *still* valuable to you, because it took and entire category you wasn’t currently looking for, and put all those results inside a single one.
 
-However, although Google left the «10 blue links» concept behind more than 15 years ago, many «behind the firewall» solutions today are still lack this basic, yet extremely useful disambiguation strategy. Most enterprise search engines, Elasticsearch and SharePoint included(2), do not support the concept «out of the box». The [initial template](http://bit.ly/results-mock-up-snapshot-feb-2016) therefore focuses heavily on these types of results.
+However, although Google left the «10 blue links» concept behind more than 15 years ago, many «behind the firewall» solutions today are still lack this basic, yet extremely useful disambiguation strategy. Most enterprise search engines, Elasticsearch and SharePoint included (2), do not support the concept «out of the box». The [initial template](http://bit.ly/results-mock-up-snapshot-feb-2016) therefore focuses heavily on these types of results.
 
 A similar strategy should be used for the autocomplete when allowed. E.g., if the content is divided into topic sections, evaluate showing these in the autocomplete. See the template for examples.
 
@@ -55,7 +55,7 @@ A paradox: In general, an enterprise’s employees are not allowed by their know
 
 In the case of SharePoint, since its inception 15 years ago, it’s primary function has been to be the sum of Office documents created by an organization’s employees. For most of these years, it has supported the concept of «[best bets](https://support.office.com/en-us/article/Add-keyword-terms-with-Best-Bets-f18c2a69-e975-4be2-9139-52dce9d8d026)». Best bets allow a small clique of so-called «Site Collection Administrators» to respond to a very limited set of queries with recommended results. 
 
-In the same timespan, Wikipedia, Stack Overflow, Reddit and a ton of other highly successful services have shown that users(3) are great at moderating content – also in the [long tail](https://en.wikipedia.org/wiki/Long_tail) – when allowed. But does SharePoint and most other enterprise search solutions allow regular users to influence the ranking of results – on a document collection they have created themselves? Regrettably: No. 
+In the same timespan, Wikipedia, Stack Overflow, Reddit and a ton of other highly successful services have shown that users (3) are great at moderating content – also in the [long tail](https://en.wikipedia.org/wiki/Long_tail) – when allowed. But does SharePoint and most other enterprise search solutions allow regular users to influence the ranking of results – on a document collection they have created themselves? Regrettably: No. 
 
 In most enterprise search solutions it’s impossible for a user to explicitly inform the system about the usefulness of any given result. The only thing that is derived from user behaviour is the «clickthrough» measurement. Some providers, such as [Vivisimo](http://www-01.ibm.com/software/data/information-optimization/) (now part of IBM Watson Explorer), allowed users to vote results up or down. Sadly, Vivisimo seems to be among the exceptions.
 
