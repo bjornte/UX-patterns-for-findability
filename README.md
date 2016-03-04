@@ -5,7 +5,7 @@ Templates for **search front ends** and **reporting tools** that allow you to **
 
 The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot-feb-2016), as hosted on Dropbox.
 
-At inception this repository is a single template for a search engine result page («[SERP](https://en.wikipedia.org/wiki/Search_engine_results_page)») created my me (Bjørn T). Over time hopefully a library for [UX](https://en.wikipedia.org/wiki/User_experience_design)-driven [findability](https://en.wikipedia.org/wiki/Findability) maintained by, among others, you.
+At inception this repository is a single template for a search engine result page («[SERP](https://en.wikipedia.org/wiki/Search_engine_results_page)») created my me (Bjørn T). Over time hopefully a library for [UX](https://en.wikipedia.org/wiki/User_experience_design)-driven [findability](https://en.wikipedia.org/wiki/Findability) maintained by, among others, you. I [have posted](https://discuss.elastic.co/t/ux-patterns-for-findability/43502) on Elastic’s forum to poll interest there.
 
 > ![disambiguation result illustration](disambiguation-result-illustration.png)
 >
