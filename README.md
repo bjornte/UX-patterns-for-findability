@@ -7,6 +7,10 @@ The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot
 
 At inception this repository is a single template for a search engine result page («[SERP](https://en.wikipedia.org/wiki/Search_engine_results_page)») created my me (Bjørn T). Over time hopefully a library for [UX](https://en.wikipedia.org/wiki/User_experience_design)-driven [findability](https://en.wikipedia.org/wiki/Findability) maintained by, among others, you.
 
+> ![disambiguation result illustration](disambiguation-result-illustration.png)
+>
+>*A disambiguation result, inspired by Google’s OneBoxes, allowing the user to state her intent.*
+
 Tons of stuff is missing, including media assets. Bear with me as I learn myself the basics of GutHub.
 
 Why?
