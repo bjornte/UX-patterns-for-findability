@@ -1,7 +1,7 @@
 UX patterns for findability
 ===
 
-User experience templates for **search front ends and reporting tools** that allow you to **find what you’re looking for**
+Templates for **search front ends** and **reporting tools** that allow you to **find what you’re looking for**
 
 The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot-feb-2016), as hosted on Dropbox.
 
