@@ -1,7 +1,7 @@
-Search UX patterns
+UX patterns for findability
 ===
 
-**User experience templates for search front ends and findability reporting dashboards**
+User experience templates for **search front ends and reporting tools** that allow you to **find what you’re looking for**
 
 The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot-feb-2016), as hosted on Dropbox.
 
@@ -28,6 +28,8 @@ This project is in its infancy, so as of March ’16 it’s just a seed for a co
 
 <small>(1) Often 20% or worse in the «[unstructured data](https://en.wikipedia.org/wiki/Unstructured_data) behind the firewall» scenario</small>
 
+
+
 Focus areas
 ===
 
@@ -47,11 +49,19 @@ A similar strategy should be used for the autocomplete when allowed. E.g., if th
 
 User influenced relevancy & findability
 ---
-In many enterprise search solutions it’s impossible for a user to explicitly inform the system about the usefulness of any given result. The only thing that is derived from user behaviour is the «clickthrough» measurement. Some providers, such as [Vivisimo](http://www-01.ibm.com/software/data/information-optimization/) (now part of IBM Watson Explorer), allowed users to vote results up or down. The template doesn’t illustrate this concept yet – but it will.
+**Including user added results & sources**
 
-User added results & sources
----
-Consider this paradox: For 15 years, SharePoint has delivered results for content that users (employees) have created. For most of these years, it has supported the concept of «best bets», that allow a small clique of administrators to respond to a very limited set of queries with recommended results. In the same timespan, Wikipedia, Stack Overflow, Reddit and a ton of other services have shown that users are great at moderating content – when allowed. But does SharePoint and most other enterprise search solutions allow regular users to influence the ranking of results – based on a document corpus they have created themselves? Oh no. For some incomprehensible reason, SharePoint search executives (I have met a lot of them) treats this as heresy. I couldn’t disagree more, and I hope to provide interfaces that illustrate how user added results should be incorporated into vanilla knowledge management solutions.
+A paradox: In general, an enterprise’s employees are not allowed by their knowledge management system to help each other find content that they have created themselves.
+
+In the case of SharePoint, since its inception 15 years ago, it’s primary function has been to be the sum of Office documents created by an organization’s employees. For most of these years, it has supported the concept of «[best bets](https://support.office.com/en-us/article/Add-keyword-terms-with-Best-Bets-f18c2a69-e975-4be2-9139-52dce9d8d026)». Best bets allow a small clique of so-called «Site Collection Administrators» to respond to a very limited set of queries with recommended results. 
+
+In the same timespan, Wikipedia, Stack Overflow, Reddit and a ton of other highly successful services have shown that users(3) are great at moderating content – also in the [long tail](https://en.wikipedia.org/wiki/Long_tail) – when allowed. But does SharePoint and most other enterprise search solutions allow regular users to influence the ranking of results – on a document collection they have created themselves? Regrettably: No. 
+
+In most enterprise search solutions it’s impossible for a user to explicitly inform the system about the usefulness of any given result. The only thing that is derived from user behaviour is the «clickthrough» measurement. Some providers, such as [Vivisimo](http://www-01.ibm.com/software/data/information-optimization/) (now part of IBM Watson Explorer), allowed users to vote results up or down. Sadly, Vivisimo seems to be among the exceptions.
+
+Over time, I'll provide interfaces that illustrate how user added results and user influenced relevancy should be incorporated into vanilla knowledge management solutions.
+
+<small>(3) Here’s a really crazy thing: The users that are allowed to moderate Wikipedia and the like, are non-paid people that frequently operate under pseudonyms and who mostly don’t know each other. In SharePoint however, you have people who’s on the payroll to contribute to the company, but they are not trusted to give each other a helping hand in uncovering content.</small>
 
 Editorial maintenance
 ---
@@ -63,6 +73,17 @@ Knowledge management is regarded as a critical success factor by many boards. Ho
 
 **Do you have documentation** of an enterprise search actually providing useful and trusted findability for unstructured data behind the firewall? Please get in touch and let me know! Big thanks in advance :-)
 
-Not a focus: Technical relevancy
+
+
+Not a focus
 ===
-There are a ton of resources covering technical relevancy. This is the main focus area of all of the search providers. I'll just add a single opinion: For publicly available textual («unstructured») content, [Google Custom Search](https://cse.google.com/) (CSE) will yield the best technical relevancy in the majority of the cases. I wouldn't consider challenging them. However, their presentation can be improved significantly, most notably with result groups, which CSE does not offer but which is used abundantly by Google.com, setting user expectations. So my suggestion is to use CSE for public, unstructured content, Elasticsearch (or your preferred alternative) for other sources, and hopefully this framework (as a basis) for presentation.
+
+Technical relevancy
+---
+There are a ton of resources covering this topic. It is the main focus area of all of the search providers. I’ll just add a single opinion: For publicly available textual («unstructured») content, [Google Custom Search](https://cse.google.com/) (CSE) will yield the best technical relevancy in the majority of the cases. I wouldn’t consider challenging them. However, their presentation can be improved significantly, most notably with result groups, which CSE does not offer but which is used abundantly by Google.com, setting user expectations. So my suggestion is to use CSE for public, unstructured content, Elasticsearch (or your preferred alternative) for other sources, and hopefully this framework (as a basis) for presentation.
+
+Visual esthetics
+---
+This is an important aspect of any user-facing service, but again, it’s well covered elsewhere. This repository concerns itself with *the user experience aspects of findability*, or, said differently, «how can we help improve findability by thinking smart about the user experience».
+
+Last, I would love your help in improving the goals here, so please get in touch or make commits as you please.
