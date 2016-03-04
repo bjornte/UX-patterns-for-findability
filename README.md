@@ -5,7 +5,7 @@ Templates for **search front ends** and **reporting tools** that allow you to **
 
 The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot-feb-2016), as hosted on Dropbox.
 
-At inception this repository is a single template for a search engine result page (SERP). Over time hopefully a library?
+At inception this repository is a single template for a search engine result page (SERP) created my me (Bjørn T). Over time hopefully a library maintained by, among others, you.
 
 Tons of stuff is missing, including media assets. Bear with me as I learn myself the basics of GutHub.
 
