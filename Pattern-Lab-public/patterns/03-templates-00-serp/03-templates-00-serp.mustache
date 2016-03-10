@@ -1,0 +1,350 @@
+&lt;div class=&quot;container-fluid&quot;&gt;
+&lt;div class=&quot;row&quot; id=&quot;top-comment-row&quot;&gt;
+&lt;div class=&quot;col-md-12&quot;&gt;
+
+  Search result mock-up &ndash; &lt;a role=&quot;button&quot; data-toggle=&quot;collapse&quot; href=&quot;#aboutCollapsibleContainer&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;aboutCollapsibleContainer&quot;&gt;about&lt;/a&gt;
+  &lt;div class=&quot;collapse&quot; id=&quot;aboutCollapsibleContainer&quot;&gt;
+    {{&gt; molecules-about}}
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;div class=&quot;row&quot; id=&quot;search-row&quot;&gt;
+    &lt;div class=&quot;col-md-1 col-sm-2 hidden-xs&quot;&gt;
+      
+      &lt;!-- NRK logo --&gt;
+      &lt;p class=&quot;form-control-static&quot; style=&quot;padding-left: 15px;&quot;&gt;
+        &lt;svg class=&quot;&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 49.3 18&quot; width=&quot;49.3px&quot; height=&quot;18px&quot; aria-hidden=&quot;true&quot; role=&quot;presentation&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M42.5.4h6.8l-5.2 8.2c-.1.2-.2.4-.2.6 0 .2.1.3.3.7l5.2 8.1h-6.8l-4.3-7.7c-.3-.3-.5-.7-.5-1.3 0-.4.1-.7.4-1.3L42.5.4zM6.4.4h4.3c1.6 0 2.7.8 3 2.6l3 15h-6.4L6.4.4zM0 .4h6.1V18H0zm17.2 0h6V18h-6zm13.7 0h6V18h-6zm-.4 3c0-2.3-1.7-3.4-3.4-3.4s-3.4 1-3.4 3.4 1.7 3.4 3.4 3.4 3.4-.8 3.4-3.4z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;/p&gt;
+
+    &lt;/div&gt;&lt;!-- col --&gt;
+    &lt;div class=&quot;col-md-3 col-md-push-8 col-sm-4 col-sm-push-6 col-xs-2 col-xs-push-10&quot;&gt;
+
+      &lt;p class=&quot;form-control-static&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot; id=&quot;site-nav-button&quot;&gt;&lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-xs&quot;&gt; &lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;The site's default template, including the default top menu, is replaced with this search-centric template when presenting results. Brand logo hidden for xs width.&quot;&gt;Site navigation&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;/p&gt;
+
+    &lt;/div&gt;&lt;!-- col --&gt;
+    &lt;div class=&quot;col-md-8 col-md-pull-3 col-sm-6 col-sm-pull-4 col-xs-10 col-xs-pull-2&quot;&gt;
+
+      &lt;!-- Search input box --&gt;
+      &lt;form&gt;
+        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;main-search-input&quot; value=&quot;Paris&quot;&gt;
+      &lt;/form&gt;
+      &lt;div id=&quot;autocomplete-container&quot;&gt;
+        {{&gt; molecules-autocomplete}}
+      &lt;/div&gt;
+
+    &lt;/div&gt;&lt;!-- col --&gt;
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;div class=&quot;row&quot; id=&quot;topic-row&quot;&gt;
+&lt;div class=&quot;col-md-12&quot;&gt;  
+
+  &lt;!-- Topic disambiguation as top navigation --&gt;
+  &lt;h2 class=&quot;sr-only&quot;&gt;Did you mean:&lt;/h2&gt;
+  &lt;ul class=&quot;nav nav-tabs&quot; id=&quot;topic-tabs&quot;&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xxs&quot;&gt;&lt;a href=&quot;results.html?topic=Paris_France&quot;&gt;&lt;img src=&quot;../../../../assets/img/paris-162x100.png&quot; width=&quot;81&quot; height=&quot;50&quot; class=&quot;img-rounded box-shadow--2dp&quot;&gt;&lt;br/&gt;&lt;br/&gt;Paris, France&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;../../../../assets/img/cop21-paris-162x100.png&quot; width=&quot;81&quot; height=&quot;50&quot; class=&quot;img-rounded box-shadow--2dp&quot;&gt;&lt;br/&gt; &lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;Topic disambiguation should happen in the autocomplete in most cases. This tab bar is a fallback. Granular mobile design is postponed.&quot;&gt;2015 Paris &lt;br/&gt;Climate Conf&lt;span class=&quot;hidden-xs hidden-sm&quot;&gt;erence&lt;/span&gt;&lt;span class=&quot;hidden-md hidden-lg&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xxs&quot;&gt;&lt;a href=&quot;http://www.theguardian.com/world/paris-attacks&quot;&gt;&lt;img src=&quot;../../../../assets/img/Jean-Jullien_illustration_Peace-for-Paris_attacks-162x100.png&quot; width=&quot;81&quot; height=&quot;50&quot; class=&quot;img-rounded box-shadow--2dp&quot;&gt;&lt;br/&gt;Nov 2015 &lt;br/&gt;Paris attacks&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xs&quot;&gt;&lt;a href=&quot;http://www.theguardian.com/lifeandstyle/paris-hilton&quot;&gt;&lt;img src=&quot;../../../../assets/img/paris-hilton-162x100.jpg&quot; width=&quot;81&quot; height=&quot;50&quot; class=&quot;img-rounded box-shadow--2dp&quot;&gt;&lt;br/&gt;&lt;br/&gt;Paris Hilton&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xs&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;../../../../assets/img/Paris-fc-83x100.png&quot; width=&quot;42&quot; height=&quot;50&quot; class=&quot;img-rounded&quot;&gt;&lt;br/&gt;&lt;br/&gt;Paris FC&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Paris_(disambiguation)&quot;&gt;&lt;img src=&quot;../../../../assets/img/blank1x1.png&quot; width=&quot;1&quot; height=&quot;50&quot;&gt;&lt;br/&gt;&lt;br  class=&quot;hidden-xs&quot;/&gt;More &lt;br class=&quot; hidden-sm hidden-md hidden-lg&quot;/&gt;topics&hellip;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div id=&quot;topic-navigation-container&quot;&gt;
+
+    &lt;div id=&quot;topic-navigation&quot;&gt;
+      &lt;table id=&quot;topic-nav-table&quot;&gt;&lt;tr&gt;&lt;td valign=&quot;bottom&quot;&gt;
+        &lt;!-- Why table for layout?
+        http://stackoverflow.com/a/585965
+        http://iamelgringo.blogspot.no/2009/02/tables-vs-css-css-trolls-begone.html
+        --&gt;
+        &lt;h2 id=&quot;topic-headline&quot;&gt;&lt;small class=&quot;hidden-xs&quot;&gt;Topic: &lt;/small&gt;2015 Paris Climate Conf&lt;span class=&quot;hidden-xxs&quot;&gt;erence&lt;/span&gt;&lt;/h2&gt;
+        &lt;p&gt;The 2015 United Nations Climate Change Confe&amp;shy;rence (&lt;span class=&quot;initialism&quot;&gt;COP&lt;/span&gt; 21) was held in Paris from Nov 30 to Dec 12, 2015. The conference negotiated the Paris Agreement, a global agreement on the re&amp;shy;duction of climate change, in which the parties will &laquo;pursue efforts to&raquo; limit the temperature increase to 1.5&deg;C (&lt;a href=&quot;https://en.wikipedia.org/wiki/2015_United_Nations_Climate_Change_Conference&quot;&gt;Wikipedia&lt;/a&gt;). &amp;nbsp; &amp;bull; &amp;nbsp; &lt;a href=&quot;#&quot;&gt;Visit topic page&lt;/a&gt; &amp;nbsp; &amp;bull; &amp;nbsp; Below are this topic's 1045 results for &laquo;Paris&raquo;.&lt;/p&gt;
+      &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;      
+    &lt;/div&gt;
+  
+    &lt;h3 class=&quot;sr-only&quot;&gt;Result types&lt;/h3&gt;
+    &lt;ul class=&quot;nav nav-pills&quot; id=&quot;silo-tabs&quot;&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-newspaper-o&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs&quot;&gt;Articles&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-bullhorn&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs&quot;&gt;News &lt;span class=&quot;hidden-sm&quot;&gt;broadcasts&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-television&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs&quot;&gt;TV &lt;span class=&quot;hidden-sm&quot;&gt;programmes&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-rss&quot; style=&quot;transform: rotate(45deg)&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs&quot;&gt;Radio &lt;span class=&quot;hidden-sm&quot;&gt;programmes&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-pencil&quot;&gt;&lt;/i&gt; &lt;span class=&quot;hidden-xs&quot;&gt;Opinions&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+      &lt;span class=&quot;hidden-xs&quot;&gt;&lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;This menu disambiguates on the result type and/or content source. Preferably, the same elements are repeated as result groups. Also preferably, the ranking is dynamic based on result relevance (same behaviour as on Google).&quot;&gt;More &lt;span class=&quot;hidden-sm hidden-md&quot;&gt;content&lt;/span&gt; types&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-xs-12 col-sm-3 col-sm-push-9 col-md-4 col-md-push-8 col-lg-4 col-lg-push-8&quot;&gt;
+
+  &lt;!-- *** img src=&quot;../../../../assets/img/cop21-paris-w400.png&quot; width=&quot;200&quot; height=&quot;232&quot; style=&quot;float:left; margin-right: 10px;&quot;--&gt;
+  &lt;h3&gt;&lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Fact box. If available. E.g. teaser from Wikipedia, map etc. Also showing a fluid table test.&quot;&gt;&lt;i class=&quot;fa fa-info-circle headline-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt; COP 21&lt;/h3&gt;
+  
+    &lt;table class=&quot;fluid-table&quot;&gt;
+      &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot; style=&quot;color: black;&quot;&gt;2015 United Nations Climate Change Conference&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Date:&lt;/td&gt;&lt;td&gt;Nov 30 &ndash; Dec 12, 2015&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;Loc&amp;shy;ation:&lt;/td&gt;&lt;td&gt;Le Bourget, Paris&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;Web&amp;shy;sites:&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://www.cop21.gouv.fr/en&quot;&gt;Venue&lt;/a&gt;, &lt;a href=&quot;http://unfccc.int/meetings/paris_nov_2015/meeting/8926.php&quot;&gt;UNFCCC&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;!--table class=&quot;fluid-table&quot;&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Avail&amp;shy;able &lt;i&gt;until&lt;/i&gt;:&lt;/td&gt;&lt;td&gt;No&amp;nbsp;expiry date&lt;/td&gt;&lt;td&gt;Avail&amp;shy;ability:&lt;/td&gt;&lt;td&gt;Worldwide&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;Year:&lt;/td&gt;&lt;td&gt;2016&lt;/td&gt;&lt;td&gt;Length:&lt;/td&gt;&lt;td&gt;29&amp;nbsp;minutes&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;&lt;tr&gt;
+        &lt;td&gt;First broad&amp;shy;cast:&lt;/td&gt;&lt;td&gt;Feb&amp;nbsp;2&lt;/td&gt;&lt;td&gt;Last broad&amp;shy;cast:&lt;/td&gt;&lt;td&gt;Feb&amp;nbsp;3&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table--&gt;
+
+
+  &lt;h3&gt;&lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Multi-faceted filters (also called &laquo;facets&raquo;, &laquo;drill downs&raquo; and &laquo;navigators&raquo;). The fact box placed above the filters are assumedly only available on the disambiguation template (?). If so, the fact box and filters may never be available simultaneously. My preference would be that the filters are placed to the left of the results in desktop layouts.&quot;&gt;&lt;i class=&quot;fa fa-filter headline-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt; Multi-faceted filters&lt;/h3&gt;
+  &lt;p&gt;If available. Not on disambiguation template.&lt;/p&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;div class=&quot;col-xs-12 col-sm-9 col-sm-pull-3 col-md-8 col-md-pull-4 col-lg-6 col-lg-pull-4 results&quot;&gt;
+  {{&gt; organisms-set-of-results }}
+
+
+
+
+
+
+  (rest of template starts here)
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-television headline-icon&quot;&gt;&lt;/i&gt; News broadcasts&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;[First broadcast]&lt;/li&gt;
+    &lt;li&gt;[Broadcast]&lt;/li&gt;
+    &lt;li&gt;[Broadcast]&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href=&quot;#&quot;&gt;More news broadcasts about COP 21&lt;/a&gt;
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-pagelines headline-icon&quot;&gt;&lt;/i&gt; Highly relevant result&lt;/h3&gt;
+  &lt;p&gt;Teaser clearly showing why this is so relevant. This content does normally belong in one of the result groups, but is rendered individually for visibility purposes since it is deemed so relevant.&lt;/p&gt;
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;span class=&quot;comment&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;TV programmes teaser. For now, content that would have spanned multiple lines is truncated. When Bootstrap 4 enters beta (assumedly spring 2016), this behaviour can change without using additional CSS to have attractive vertical alignment of boxes with varying amounts of content.&quot;&gt;&lt;i class=&quot;fa fa-television headline-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt; TV programmes&lt;/h3&gt;
+  &lt;ul class=&quot;list-inline&quot; style=&quot;margin-top: 10px; margin-bottom: -10px;&quot;&gt;
+    &lt;li&gt;&lt;div class=&quot;thumbnail&quot; style=&quot;max-width: 184px;&quot;&gt;&lt;img src=&quot;../../../../assets/img/En-lang-klimareise-til-Paris-h200.jpg&quot; height=&quot;100&quot; width=&quot;178&quot;&gt;
+    &lt;a href=&quot;http://www.nrk.no/urix/en-lang-klimareise-til-paris-1.12699954&quot;&gt;&lt;h4 class=&quot;truncate&quot;&gt;A long journey to Paris&lt;/h4&gt;&lt;/a&gt;
+    &lt;p class=&quot;source truncate&quot;&gt;NRK Daily news&lt;span class=&quot;timestamp&quot;&gt; - Dec 13 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class=&quot;thumbnail&quot; style=&quot;max-width: 184px;&quot; &gt;&lt;img src=&quot;../../../../assets/img/Paris-avtalen-er-vedtatt-Dette-er-stort-h200.jpg&quot; width=&quot;178&quot; height=&quot;100&quot;&gt;
+    &lt;a href=&quot;http://www.nrk.no/urix/paris-avtalen-er-vedtatt_-_-dette-er-stort-1.12701516&quot;&gt;&lt;h4 class=&quot;truncate&quot;&gt;Paris agreement ratified: &ndash; A great achievement!&lt;/h4&gt;&lt;/a&gt;
+    &lt;p class=&quot;source truncate&quot;&gt;NRK Daily news&lt;span class=&quot;timestamp&quot;&gt; - Dec 13 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class=&quot;thumbnail&quot; style=&quot;max-width: 184px;&quot; &gt;&lt;img src=&quot;../../../../assets/img/Noen-som-har-lyst-paa-sjampanje-h200.jpg&quot; height=&quot;100&quot; width=&quot;178&quot;&gt;
+    &lt;a href=&quot;http://www.nrk.no/urix/_-noen-som-har-lyst-pa-sjampanje_-1.12701564&quot;&gt;&lt;h4 class=&quot;truncate&quot;&gt;&ndash; Anybody for champagne?&lt;/h4&gt;&lt;/a&gt;
+    &lt;p class=&quot;source truncate&quot;&gt;NRK Daily news&lt;span class=&quot;timestamp&quot;&gt; - Dec 13 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href=&quot;#&quot;&gt;More TV programmes about COP 21&lt;/a&gt;
+
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-rss headline-icon&quot; style=&quot;transform: rotate(45deg)&quot;&gt;&lt;/i&gt; Radio programmes&lt;/h3&gt;
+  &lt;ul class=&quot;list-unstyled&quot;&gt;
+    &lt;li&gt;
+      &lt;h4&gt;&lt;a href=&quot;https://radio.nrk.no/serie/fritimen/muhr42211715/19-12-2015#t=13m47s&quot;&gt;Ex-minister Sundtoft on Paris&lt;/a&gt;&lt;/h4&gt;
+      &lt;p&gt;&lt;a href=&quot;https://radio.nrk.no/serie/fritimen/muhr42211715/19-12-2015#t=13m47s&quot; class=&quot;btn btn-info btn-xs&quot;&gt;&lt;i class=&quot;fa fa-rss&quot; style=&quot;transform: rotate(45deg)&quot;&gt;&lt;/i&gt;0:10&lt;/a&gt; &lt;i class=&quot;fa fa-cc&quot;&gt;&lt;/i&gt; &lt;span class=&quot;source&quot;&gt;The Break with Berg &amp;amp; Svab&oslash;&lt;/span&gt; &lt;span class=&quot;timestamp&quot;&gt;&ndash;  Dec 19, 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h4&gt;&lt;a href=&quot;https://radio.nrk.no/serie/broensj/dmpa08004815/29-11-2015#t=36m1s&quot;&gt;Kids travel to the Paris climate talks&lt;/a&gt;&lt;/h4&gt;
+      &lt;p&gt;&lt;a href=&quot;https://radio.nrk.no/serie/broensj/dmpa08004815/29-11-2015#t=36m1s&quot; class=&quot;btn btn-info btn-xs&quot;&gt;&lt;i class=&quot;fa fa-rss&quot; style=&quot;transform: rotate(45deg)&quot;&gt;&lt;/i&gt;0:08&lt;/a&gt; &lt;i class=&quot;fa fa-cc&quot;&gt;&lt;/i&gt; &lt;span class=&quot;source&quot;&gt;Br&oslash;nsj&lt;/span&gt; &lt;span class=&quot;timestamp&quot;&gt;&ndash;  Nov 29, 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h4&gt;&lt;a href=&quot;https://radio.nrk.no/serie/her-og-naa-hovedsending/dmnh01024315/09-12-2015#t=20m52s&quot;&gt;Climate agreement drafted in Paris&lt;/a&gt;&lt;/h4&gt;
+      &lt;p&gt;&lt;a href=&quot;https://radio.nrk.no/serie/her-og-naa-hovedsending/dmnh01024315/09-12-2015#t=20m52s&quot; class=&quot;btn btn-info btn-xs&quot;&gt;&lt;i class=&quot;fa fa-rss&quot; style=&quot;transform: rotate(45deg)&quot;&gt;&lt;/i&gt;0:03&lt;/a&gt; &lt;i class=&quot;fa fa-cc&quot;&gt;&lt;/i&gt; &lt;span class=&quot;source&quot;&gt;Here &amp;amp; now with Erik Skarrud&lt;/span&gt; &lt;span class=&quot;timestamp&quot;&gt;&ndash;  Dec 9, 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href=&quot;#&quot;&gt;More radio programmes about COP 21&lt;/a&gt;
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-pencil headline-icon&quot;&gt;&lt;/i&gt; Opinions&lt;/h3&gt;
+  &lt;ul class=&quot;list-unstyled&quot;&gt;
+    &lt;li&gt;
+      &lt;div class=&quot;thumbnail&quot; style=&quot;float:left; margin-right: 10px;&quot;&gt;&lt;img src=&quot;../../../../assets/img/the-Guardian-saving-the-planet-in-a-fracturing-world-3488-h200.jpg&quot; width=&quot;166&quot; height=&quot;100&quot; border=&quot;0&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+      &lt;h4&gt;&lt;a href=&quot;http://www.theguardian.com/commentisfree/2015/dec/13/the-guardian-view-on-cop-21-climate-talks-saving-the-planet-in-a-fracturing-world&quot;&gt;Saving the planet in a fracturing world&lt;/a&gt;&lt;/h4&gt;
+      &lt;p class=&quot;source&quot;&gt;Editorial&lt;span class=&quot;timestamp&quot;&gt; &ndash; Dec 13, 2015&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;Globalisation has been spinning into reverse. But the Paris talks illustrate the potential of determined diplomacy between jealously sovereign states&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h4&gt;&lt;a href=&quot;http://www.theguardian.com/commentisfree/2015/oct/04/the-guardian-view-on-the-paris-climate-change-summit-reasons-to-be-cheerful&quot;&gt;Reasons to be cheerful&lt;/a&gt;&lt;/h4&gt;
+      &lt;p class=&quot;source&quot;&gt;Editorial&lt;span class=&quot;timestamp&quot;&gt; &ndash; Oct 4, 2015&lt;/span&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;h4&gt;&lt;a href=&quot;http://www.theguardian.com/commentisfree/2015/nov/18/the-guardian-view-on-paris-terror-and-climate-change-shaping-the-future&quot;&gt;Shaping the future&lt;/a&gt;&lt;/h4&gt;
+      &lt;p class=&quot;source&quot;&gt;Editorial&lt;span class=&quot;timestamp&quot;&gt; &ndash; Nov 18, 2015&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href=&quot;#&quot;&gt;More opinions about COP 21&lt;/a&gt;
+
+  &lt;hr/&gt;
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-user headline-icon&quot;&gt;&lt;/i&gt; Experts&lt;/h3&gt;
+  &lt;ul class=&quot;nav nav-pills&quot;&gt;
+    &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;NRK journalists&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;Scientists&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xs&quot;&gt;&lt;a href=&quot;#&quot;&gt;NGO representatives&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot; class=&quot;hidden-xs&quot;&gt;&lt;a href=&quot;#&quot;&gt;Politicians, businesspeople &amp;amp; pundits&lt;/a&gt;&lt;/li&gt;
+    &lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#&quot;&gt;Others&hellip;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul&gt;
+    &lt;li&gt;[First expert]&lt;/li&gt;
+    &lt;li&gt;[Expert]&lt;/li&gt;
+    &lt;li&gt;[Expert]&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href=&quot;#&quot;&gt;More experts on COP 21&lt;/a&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-xs-6 col-sm-5 col-md-4 col-lg-3&quot;&gt;  
+
+  &lt;h3&gt;&lt;a href=&quot;#&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;i class=&quot;fa fa-plus-square headline-icon&quot;&gt;&lt;/i&gt; Add a missing result&lt;/a&gt;&lt;/h3&gt;
+
+  &lt;p&gt;Is some content missing? Go ahead and add it!&lt;/p&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;div class=&quot;col-xs-6 col-sm-5 col-md-4 col-lg-3&quot;&gt;  
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-plus-square headline-icon&quot;&gt;&lt;/i&gt; Add a missing source&lt;/h3&gt;
+  &lt;p&gt;Yes, you can add an entirely new source to these results. The source can be visible only to you, or you can suggest it also for other people.&lt;/p&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;div class=&quot;col-xs-12 col-sm-5 col-md-4 col-lg-3&quot;&gt;  
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-question-circle headline-icon&quot;&gt;&lt;/i&gt; Request help&lt;/h3&gt;
+  &lt;p&gt;Are you unhappy with what you found? &lt;a href=&quot;#&quot;&gt;Chat with us&lt;/a&gt; and we'll go looking together with you! This service is provided in collaboration with the &lt;a href=&quot;http://www.ub.uio.no/english/&quot;&gt;University of Oslo Library&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+&lt;div class=&quot;col-xs-6 col-sm-5 col-md-4 col-lg-3&quot;&gt;  
+
+  &lt;h3&gt;&lt;i class=&quot;fa fa-retweet headline-icon&quot;&gt;&lt;/i&gt; Reuse our content&lt;/h3&gt;
+  &lt;p&gt;From May 2016, NRK will forfeit copyright on all its textual articles&lt;sup&gt;1&lt;/sup&gt; and switch to a Public Domain model using &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;&lt;abbr title=&quot;Creative Commons Attribution-ShareAlike 4.0 International License&quot;&gt;CC-BY-SA&lt;/abbr&gt;&lt;/a&gt;. Visit our &lt;a href=&quot;http://www.nrk.no/etikk/opphavsrett-pa-nrk.no-1.2843522&quot;&gt;content reuse portal&lt;/a&gt; for practical tips. Shortcuts for sharing this result in &lt;abbr title=&quot;JavaScript Object Notation&quot;&gt;JSON&lt;/abbr&gt; form: &lt;a href=&quot;#&quot;&gt;dynamic&lt;/a&gt;, &lt;a href=&quot;#&quot;&gt;static&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;&lt;!-- col --&gt;
+
+&lt;div class=&quot;col-xs-6 col-sm-push-5 col-sm-5 col-md-push-0 col-md-4 col-lg-push-9 col-lg-3&quot;&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;small&gt;Content written by our own journalists, currently or previously employed, both freelancers and permanent employees. Whenever the article's author has an e-mail address ending with @nrk.no, you are free to reuse the text.&lt;/small&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;!-- col --&gt;
+
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-md-12&quot;&gt;  
+
+&lt;div id=&quot;colophon&quot; style=&quot;margin: 0px -15px -30px -15px; padding: 10px 15px 30px 15px;&quot;&gt;
+  &lt;h2 style=&quot;font-weight: 200;&quot;&gt;Search result mock-up&lt;/h2&gt;
+  &lt;p&gt;Click the &laquo;about&raquo; link on the top of the page for details about this mock-up.&lt;/p&gt;
+  &lt;p&gt;Suggested future license for &lt;a href=&quot;https://en.wikipedia.org/wiki/NRK&quot;&gt;NRK&lt;/a&gt; (no affiliation): All written articles &lt;a href=&quot;https://en.wikipedia.org/wiki/Copyleft&quot;&gt;copylefted&lt;/a&gt; under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;&lt;abbr title=&quot;Creative Commons Attribution-ShareAlike 4.0 International License&quot;&gt;CC-BY-SA&lt;/abbr&gt;&lt;/a&gt; or &lt;a href=&quot;http://data.norge.no/nlod/en/1.0&quot;&gt;&lt;abbr title=&quot;Norwegian Licence for Open Government Data&quot;&gt;NLOD&lt;/abbr&gt;&lt;/a&gt;. Other content, including photos and TV &amp;amp; radio programmes: &lt;a href=&quot;https://nrkbeta.no/2009/07/03/data-som-vi-alt-har-betalt-for/&quot;&gt;As few rights reserved as possible&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- col-md-12 --&gt;
+&lt;/div&gt;&lt;!-- row --&gt;
+&lt;/div&gt;&lt;!-- container-fluid --&gt;
+.
+
+&lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+        &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt;Add a missing result&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+
+        &lt;form&gt;
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;title&quot;&gt;Title *&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;title&quot; placeholder=&quot;The page or document title or a short description&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;url&quot;&gt;URL&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;URL&quot; placeholder=&quot;www.something.com (if applicable)&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;description&quot;&gt;Description&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;description&quot; placeholder=&quot;A short summary that fits in a search result, approx. 140 characters long.&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;audience&quot;&gt;Audience&lt;/label&gt;
+            &lt;select class=&quot;form-control&quot; id=&quot;audience&quot;&gt;
+              &lt;option&gt;Only myself&lt;/option&gt;
+              &lt;option&gt;My work group&lt;/option&gt;
+              &lt;option&gt;My colleagues&lt;/option&gt;
+              &lt;option&gt;My clients&lt;/option&gt;
+              &lt;option&gt;Everyone&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;span id=&quot;helpBlock&quot; class=&quot;help-block&quot;&gt;Consider &lt;a href=&quot;#&quot;&gt;logging in&lt;/a&gt; before submitting. All suggested, public results will be moderated by peers. &lt;a href=&quot;http://www.afterlife-knowledge.com/peermod.html&quot;&gt;Read more&lt;/a&gt;.&lt;/span&gt;
+        &lt;/form&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Add result&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;
+
+&lt;!-- Mustache template section has been removed. All Mustache is obviously parsed by Pattern Lab at compile time. --&gt;
+
+&lt;!-- Page-specific JavaScript --&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function loadEvents() {
+
+// Hide comment styles on click
+$( &quot;#hide-comment-button&quot; ).click(function() {
+  //$( &quot;.comment&quot; ).removeClass('comment');
+  $( &quot;#resultSectionComment&quot; ).remove();
+  $( &quot;#hide-comment-button&quot; ).remove();
+  $( &quot;#hide-comment-receipt&quot; ).show();
+  $('.comment').contents().unwrap();
+});
+
+// Show autocomplete
+$( &quot;#main-search-input&quot; ).focus(function() {
+  var addAutoCompleteWidthForSmallWindows = 0;
+  if ( $( window ).width() &lt; 479 ) {
+    addAutoCompleteWidthForSmallWindows = 55;
+  }
+  $(&quot;#autocomplete-container&quot;).width( $(&quot;#main-search-input&quot;).width() + 26 
+    + addAutoCompleteWidthForSmallWindows );
+  $(&quot;#autocomplete-container&quot;).show(0);
+});
+
+// Hide autocomplete
+$( &quot;#main-search-input&quot; ).focusout(function() {
+  $(&quot;#autocomplete-container&quot;).hide();
+});
+
+$(function () {
+  $('[data-toggle=&quot;popover&quot;]').popover()
+})
+
+$(function () {
+  $('[data-toggle=&quot;tooltip&quot;]').tooltip()
+})
+
+// Resize fluid tables
+initFluidTables();
+
+} //loadEvents()
+&lt;/script&gt;
