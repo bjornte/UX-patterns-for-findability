@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="Search result template with sample content">
+  <meta name="author" content="Bjorn Tennoe, m. +47 966 24 730, bjornte@gmail.com">
+  <link rel="icon" href="http://www.nrk.no/favicon.ico">
+  <title>Paris – Search results – NRK</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"-->
+    <!-- Font Awesome: Icon font for e.g. ship icon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <!--link rel="stylesheet" href="assets/css/search-theme.css"-->
+    <link rel="stylesheet" href="assets/css/fluidTables.css">
+
+    <style>
+      .standard-type { font-size: 13px; font-weight: normal; }
+      .comment { border-bottom: 1px dashed rgba(0, 0, 0, 0.3); background-color: rgba(255, 255, 0, 0.2); }
+      .headline-icon { color: #BBB; }
+      .truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .results h3, .results h4 { margin-bottom: 0px; font-size: 18px; }
+
+      #search-row { background-color: #777; }
+
+      #topic-row { background-color: #666; }
+
+      #top-comment-row, #colophon { background-color: black; color: #AAA; font-weight: 300;}
+
+      #top-comment-row .well { color: black; /*background-color: #333;*/ }
+
+      #search-row, #search-row a { color: #FFF; }
+
+      #search-row { padding-top: 10px; padding-bottom: 10px; }
+
+      #topic-tabs { border-bottom: none; }      
+
+      #topic-tabs li:not(.active) a img {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+      }
+      #topic-tabs li.active a, #topic-tabs li a:hover {
+        background-color: #EEE;
+        border: 1px solid #DDD;
+        border-bottom: none;
+      }
+
+      #topic-tabs li:not(.active) a:not(:hover):not(:focus) { color: #FFF; }
+
+      #topic-tabs li a:hover img, #topic-tabs li a:focus img {
+        filter: none;
+        -webkit-filter: none;
+      }
+
+      #topic-navigation-container {
+        background-color: #EEE;
+        border-top: 2px solid #260958;
+        margin-top: -2px;
+        margin-left: -15px; margin-right: -15px;
+        border-bottom: 1px solid #DDD;
+      }
+
+      #topic-headline {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 15px; padding-right: 15px;
+      }
+
+      #topic-headline, #topic-headline small { 
+        color: white; 
+        font-weight: 200;
+        text-shadow: 1px 1px 2px #000;
+      }
+
+      #topic-navigation p {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 15px; padding-right: 15px;
+        color: white;
+        font-weight: 300;
+        text-shadow: 0px 1px 2px #000;
+        max-width: 900px;
+      }
+
+      #topic-navigation a {
+        color: white;
+        text-decoration: underline;
+      }
+
+      #topic-navigation {
+        margin-top: 10px;
+        background-image: url(assets/img/thenation-com-paris_climate_protest_arc_ap_img.jpg);
+        background-repeat: no-repeat;
+      }
+
+      #topic-nav-table {
+        height: 300px;        
+      }
+
+      #silo-tabs > li > a:focus, #silo-tabs > li > a:hover { background-color: #FFF; }
+
+      @media(max-width: 479px) {
+        .hidden-xxs { display: none; }
+        .nav > li.hidden-xxs { display: none; }
+      }
+
+      #autocomplete-container p.list-group-item.disabled { 
+      	padding-top: 10px; padding-bottom: 0px; 
+      	border-width: 0px; border-bottom-width: 3px; 
+      	background-color: white;
+        text-align: right;
+      }
+
+      #autocomplete-container a { 
+      	border-width: 0px; 
+      	padding-top: 5px; padding-bottom: 5px; 
+      }
+
+      #autocomplete-container {
+        position: absolute;
+        z-index: 1; /* See https://github.com/HubSpot/drop/issues/9 */
+        width: 400px;
+        display: none;
+      }
+
+      #autocomplete-container a {
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #autocomplete-container a.active {
+        color: white;
+      }
+
+      #autocomplete-container img { 
+        border-radius: 4px;
+        width: 64px;
+        height: 40px;
+        margin: 0px 10px 0px -2px;
+      }
+
+      #autocomplete-container .fa {
+        color: #999;
+        margin-right: 10px;
+      }
+
+      @media(max-width: 479px) {
+        #autocomplete-container img { 
+          width: 49px;
+          height: 30px;
+          margin: -10px 5px -8px -11px;
+          border-radius: 4px;
+        }
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+          /* Above: The crazy syntax checks for webkit browsers (Safari, Chrome) */
+          /* See http://stackoverflow.com/a/15402558/2450941 */
+          #autocomplete-container img { 
+            -webkit-clip-path: inset(0px 10px 0px 10px);
+            /* Above: Values are from-top, from-right, from-bottom, from-left */
+            margin: -10px -5px -8px -21px;
+          }
+        }
+        #site-nav-button { margin-left: -25px; }
+        #top-comment-button { margin-right: -10px; }
+      }
+
+      .box-shadow--6dp {
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2)
+      }
+
+      .box-shadow--2dp {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
+      }
+
+      /* Partly from search-theme.css */
+      .source {
+        font-style: normal;
+        color: rgb(0, 102, 33);
+        /*white-space: nowrap;*/
+        margin-bottom: 0px;
+      }
+      .timestamp {
+        color: rgb(127, 127, 127);
+        white-space: nowrap;
+      }
+
+    </style>
+
+  </head>
+  <body role="document" onload="loadEvents()">
+<div class="container-fluid">
+<div class="row" id="top-comment-row">
+<div class="col-md-12">
+
+  Search result mock-up – <a role="button" data-toggle="collapse" href="#aboutCollapsibleContainer" aria-expanded="false" aria-controls="aboutCollapsibleContainer">about</a>
+  <!--button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#aboutCollapsibleContainer" aria-expanded="false" aria-controls="aboutCollapsibleContainer">About this mockup</button-->
+  <div class="collapse" id="aboutCollapsibleContainer">
+    <div class="well">
+      <h3>About</h3>
+      <p>This search result mock-up is/was made by <a xmlns:cc="http://creativecommons.org/ns#" href="https://no.linkedin.com/in/tennoe" property="cc:attributionName" rel="cc:attributionURL">Bjørn Tennøe</a> of <a href="http://www.mormor.it">Mormor design AS</a>. Work started in Feb 2016. Its purpose, apart from being an <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a> and <a href="https://en.wikipedia.org/wiki/MEAN_(software_bundle)">Full stack JavaScript</a> training ground and search user experience showcase for myself, is to be a starting point for people building enterprise search front ends, showing best practices, with an emphasis on:</p>
+      <ul>
+        <li><span class="comment" data-toggle="tooltip" data-placement="top" title="Disambiguation: To identify the meaning of a word, when the word has multiple meanings.">Disambiguation</span> through 1) Result groups and 2) Autocomplete topics</li>
+        <li>Editorial maintenance</li>
+        <li>User added results &amp; sources</li>
+        <li>User influenced relevancy &amp; findability and</li>
+        <li>Findability reporting</li>
+      </ul>
+      <p>See the <span class="comment" data-toggle="tooltip" data-placement="top" title="Comments look like this.">inline comments</span> for more details (<a href="#" id="hide-comment-button">hide comments</a>).</p>
+      <p>Hopefully the rationale will be fleshed out in an accompanying presentation.</p>
+      <p>Content is in part sampled from <a href="http://www.nrk.no">NRK</a> and <a href="http://www.theguardian.com">The Guardian</a>. CSS framework: <a href="http://getbootstrap.com/">Bootstrap 3</a>. The mock-up is intended to be hosted on Github, but that hasn't happened yet.</p>
+      <p>The mock-up is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution-ShareAlike 4.0 International License">CC-BY-SA</abbr></a>.</p>
+
+      <h3>To do</h3>
+      <ul>
+        <li>Evaluate:<ul class="list-inline">
+          <li>– Bootstrap 4 («<a href="https://scotch.io/bar-talk/whats-new-in-bootstrap-4">What’s New</a>», CDN: <a href="https://cask.scotch.io/bootstrap-4.0.css">1</a>, <a href="https://cask.scotch.io/bootstrap-4.0-flex.css">2</a>, <a href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js">3</a>)</li>
+          <li>– Flexbox</li>
+        </ul></li>
+        <li>Flesh out:<ul class="list-inline">
+          <li>– Add results (in progress)</li>
+          <li>– Findability reporting</li>
+          <li>– «About» section</li>
+        </ul></li>
+        <li>Post on Github</li>
+      </ul>
+
+      <h3>Done! <i class="fa fa-hand-spock-o"></i></h3>
+      <ul>
+        <li>First draft finished Feb ’16</li>
+        <li>Made first contact with Elasticsearch &amp; NRK</li>
+      </ul>
+
+      <!-- <p><span data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">tooltip-example</span></p> -->
+      <!-- <button class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Popover content. Testing, testing." data-title="Popover title">popover-example</button> -->
+    </div>
+  </div>
+
+</div><!-- col -->
+</div><!-- row -->
+<div class="row" id="search-row">
+    <div class="col-md-1 col-sm-2 hidden-xs">
+      
+      <!-- NRK logo -->
+      <p class="form-control-static" style="padding-left: 15px;">
+        <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.3 18" width="49.3px" height="18px" aria-hidden="true" role="presentation"><path fill="currentColor" d="M42.5.4h6.8l-5.2 8.2c-.1.2-.2.4-.2.6 0 .2.1.3.3.7l5.2 8.1h-6.8l-4.3-7.7c-.3-.3-.5-.7-.5-1.3 0-.4.1-.7.4-1.3L42.5.4zM6.4.4h4.3c1.6 0 2.7.8 3 2.6l3 15h-6.4L6.4.4zM0 .4h6.1V18H0zm17.2 0h6V18h-6zm13.7 0h6V18h-6zm-.4 3c0-2.3-1.7-3.4-3.4-3.4s-3.4 1-3.4 3.4 1.7 3.4 3.4 3.4 3.4-.8 3.4-3.4z"></path></svg>
+      </p>
+
+    </div><!-- col -->
+    <div class="col-md-3 col-md-push-8 col-sm-4 col-sm-push-6 col-xs-2 col-xs-push-10">
+
+      <p class="form-control-static">
+      <button type="button" class="btn btn-default btn-xs" id="site-nav-button"><i class="fa fa-bars"></i><span class="hidden-xs"> <span class="comment" data-toggle="tooltip" data-placement="bottom" title="The site's default template, including the default top menu, is replaced with this search-centric template when presenting results. Brand logo hidden for xs width.">Site navigation</span></span></button>
+      </p>
+
+    </div><!-- col -->
+    <div class="col-md-8 col-md-pull-3 col-sm-6 col-sm-pull-4 col-xs-10 col-xs-pull-2">
+
+      <!-- Search input box -->
+      <form>
+        <input type="text" class="form-control" id="main-search-input" value="Paris">
+      </form>
+      <div id="autocomplete-container">
+        <div class="list-group box-shadow--6dp">
+          <p class="list-group-item disabled">Search for words</p>
+          <a href="#" class="list-group-item"><i class="fa fa-search fa-fw"></i> paris</a>
+          <a href="#" class="list-group-item"><i class="fa fa-search fa-fw"></i> parisienne</a>
+          <a href="#" class="list-group-item"><i class="fa fa-search fa-fw"></i> parisian</a>
+          <p class="list-group-item disabled">Topic home pages</p>
+          <a href="#" class="list-group-item"><img class="box-shadow--2dp" src="assets/img/paris-162x100.png"> Paris, France</a>
+          <a href="#" class="list-group-item"><img class="box-shadow--2dp" src="assets/img/cop21-paris-162x100.png"> 2015 Paris Climate Conference</a>
+          <a href="#" class="list-group-item"><img class="box-shadow--2dp" src="assets/img/Jean-Jullien_illustration_Peace-for-Paris_attacks-162x100.png"> Nov 2015 Paris attacks</a>
+          <p class="list-group-item disabled">Previously visited</p>
+          <a href="#" class="list-group-item"><span class="badge">×</span><i class="fa fa-newspaper-o fa-fw"></i> Paris climate change deal too weak to help poor, critics warn </a>
+          <a href="#" class="list-group-item"><span class="badge">×</span><i class="fa fa-rss fa-fw" style="transform: rotate(45deg)"></i> Ex-minister Sundtoft on Paris</a>
+          <a href="#" class="list-group-item"><span class="badge">×</span><i class="fa fa-television fa-fw"></i> A long journey to Paris</a>
+          <!--a href="#" class="list-group-item"><img src="assets/img/paris-hilton-162x100.jpg"> Paris Hilton</a-->
+          <!--a href="#" class="list-group-item"><img src="assets/img/Paris-fc-162x100.png"> Paris FC</a-->
+        </div>
+      </div>
+
+    </div><!-- col -->
+</div><!-- row -->
+<div class="row" id="topic-row">
+<div class="col-md-12">  
+
+  <!-- Topic disambiguation as top navigation -->
+  <h2 class="sr-only">Did you mean:</h2>
+  <ul class="nav nav-tabs" id="topic-tabs">
+    <li role="presentation" class="hidden-xxs"><a href="results.html?topic=Paris_France"><img src="assets/img/paris-162x100.png" width="81" height="50" class="img-rounded box-shadow--2dp"><br/><br/>Paris, France</a></li>
+    <li role="presentation" class="active"><a href="#"><img src="assets/img/cop21-paris-162x100.png" width="81" height="50" class="img-rounded box-shadow--2dp"><br/> <span class="comment" data-toggle="tooltip" data-placement="bottom" title="Topic disambiguation should happen in the autocomplete in most cases. This tab bar is a fallback. Granular mobile design is postponed.">2015 Paris <br/>Climate Conf<span class="hidden-xs hidden-sm">erence</span><span class="hidden-md hidden-lg">.</span></span></a></li>
+    <li role="presentation" class="hidden-xxs"><a href="http://www.theguardian.com/world/paris-attacks"><img src="assets/img/Jean-Jullien_illustration_Peace-for-Paris_attacks-162x100.png" width="81" height="50" class="img-rounded box-shadow--2dp"><br/>Nov 2015 <br/>Paris attacks</a></li>
+    <li role="presentation" class="hidden-xs"><a href="http://www.theguardian.com/lifeandstyle/paris-hilton"><img src="assets/img/paris-hilton-162x100.jpg" width="81" height="50" class="img-rounded box-shadow--2dp"><br/><br/>Paris Hilton</a></li>
+    <li role="presentation" class="hidden-xs"><a href="#"><img src="assets/img/Paris-fc-83x100.png" width="42" height="50" class="img-rounded"><br/><br/>Paris FC</a></li>
+    <li role="presentation"><a href="https://en.wikipedia.org/wiki/Paris_(disambiguation)"><img src="assets/img/blank1x1.png" width="1" height="50"><br/><br  class="hidden-xs"/>More <br class=" hidden-sm hidden-md hidden-lg"/>topics…</a></li>
+  </ul>
+
+  <div id="topic-navigation-container">
+
+    <div id="topic-navigation">
+      <table id="topic-nav-table"><tr><td valign="bottom">
+        <!-- Why table for layout?
+        http://stackoverflow.com/a/585965
+        http://iamelgringo.blogspot.no/2009/02/tables-vs-css-css-trolls-begone.html
+        -->
+        <h2 id="topic-headline"><small class="hidden-xs">Topic: </small>2015 Paris Climate Conf<span class="hidden-xxs">erence</span></h2>
+        <p>The 2015 United Nations Climate Change Confe&shy;rence (<span class="initialism">COP</span> 21) was held in Paris from Nov 30 to Dec 12, 2015. The conference negotiated the Paris Agreement, a global agreement on the re&shy;duction of climate change, in which the parties will «pursue efforts to» limit the temperature increase to 1.5°C (<a href="https://en.wikipedia.org/wiki/2015_United_Nations_Climate_Change_Conference">Wikipedia</a>). &nbsp; &bull; &nbsp; <a href="#">Visit topic page</a> &nbsp; &bull; &nbsp; Below are this topic's 1045 results for «Paris».</p>
+      </td></tr></table>      
+    </div>
+  
+    <h3 class="sr-only">Result types</h3>
+    <ul class="nav nav-pills" id="silo-tabs">
+      <li role="presentation"><a href="#"><i class="fa fa-newspaper-o"></i> <span class="hidden-xs">Articles</span></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-bullhorn"></i> <span class="hidden-xs">News <span class="hidden-sm">broadcasts</span></span></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-television"></i> <span class="hidden-xs">TV <span class="hidden-sm">programmes</span></span></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-rss" style="transform: rotate(45deg)"></i> <span class="hidden-xs">Radio <span class="hidden-sm">programmes</span></span></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-pencil"></i> <span class="hidden-xs">Opinions</span></a></li>
+      <li role="presentation"><a href="#"><i class="fa fa-ellipsis-h"></i>
+      <span class="hidden-xs"><span class="comment" data-toggle="tooltip" data-placement="top" title="This menu disambiguates on the result type and/or content source. Preferably, the same elements are repeated as result groups. Also preferably, the ranking is dynamic based on result relevance (same behaviour as on Google).">More <span class="hidden-sm hidden-md">content</span> types</span></span></a></li>
+    </ul>
+
+  </div>
+
+</div><!-- col -->
+</div><!-- row -->
+<div class="row">
+
+<div class="col-xs-12 col-sm-3 col-sm-push-9 col-md-4 col-md-push-8 col-lg-4 col-lg-push-8">
+
+  <!-- *** img src="assets/img/cop21-paris-w400.png" width="200" height="232" style="float:left; margin-right: 10px;"-->
+  <h3><span class="comment" data-toggle="tooltip" data-placement="top" title="Fact box. If available. E.g. teaser from Wikipedia, map etc. Also showing a fluid table test."><i class="fa fa-info-circle headline-icon"></i></span> COP 21</h3>
+  
+    <table class="fluid-table">
+      <tr>
+        <td colspan="2" style="color: black;">2015 United Nations Climate Change Conference</td>
+      </tr><tr>
+      <tr>
+        <td>Date:</td><td>Nov 30 – Dec 12, 2015</td><td></td>
+      </tr><tr>
+        <td>Loc&shy;ation:</td><td>Le Bourget, Paris</td>
+      </tr><tr>
+        <td>Web&shy;sites:</td><td><a href="http://www.cop21.gouv.fr/en">Venue</a>, <a href="http://unfccc.int/meetings/paris_nov_2015/meeting/8926.php">UNFCCC</a></td><td></td>
+      </tr>
+    </table>
+    <!--table class="fluid-table">
+      <tr>
+        <td>Avail&shy;able <i>until</i>:</td><td>No&nbsp;expiry date</td><td>Avail&shy;ability:</td><td>Worldwide</td><td></td>
+      </tr><tr>
+        <td>Year:</td><td>2016</td><td>Length:</td><td>29&nbsp;minutes</td><td></td>
+      </tr><tr>
+        <td>First broad&shy;cast:</td><td>Feb&nbsp;2</td><td>Last broad&shy;cast:</td><td>Feb&nbsp;3</td><td></td>
+      </tr>
+    </table-->
+
+
+  <h3><span class="comment" data-toggle="tooltip" data-placement="top" title="Multi-faceted filters (also called «facets», «drill downs» and «navigators»). The fact box placed above the filters are assumedly only available on the disambiguation template (?). If so, the fact box and filters may never be available simultaneously. My preference would be that the filters are placed to the left of the results in desktop layouts."><i class="fa fa-filter headline-icon"></i></span> Multi-faceted filters</h3>
+  <p>If available. Not on disambiguation template.</p>
+
+</div><!-- col -->
+<div class="col-xs-12 col-sm-9 col-sm-pull-3 col-md-8 col-md-pull-4 col-lg-6 col-lg-pull-4 results">  
+
+  <p><span id="resultSectionComment" class="comment" data-toggle="tooltip" data-placement="top" title="Main results section. For publicly available textual content, Google Custom Search (CSE) will yield the best technical relevancy in the vast majority of the cases. I wouldn't consider challenging them. However, their presentation can be improved significantly, most notably with result groups, which CSE does not offer but which is used abundantly by Google.com, setting user expectations. So my suggestion is to use CSE for public, unstructured content, Elasticsearch (or your preferred alternative) for other sources, and hopefully this framework (as a basis) for presentation.">(Result section)</span></p>
+
+  <h3><i class="fa fa-sun-o headline-icon"></i> Interactive box</h3>
+  <p>If available. E.g. weather, public transit, stocks etc.</p>
+
+  <h3><span class="comment" data-toggle="tooltip" data-placement="top" title="Most relevant result. Teaser clearly showing why this is so relevant. The teaser does not have to be text. E.g., it can be a still video picture or a table with structured data. Most of all it must defend its top placement."><i class="fa fa-pagelines headline-icon"></i></span> <a href="http://www.theguardian.com/environment/2015/dec/13/paris-climate-deal-cop-diplomacy-developing-united-nations">The world's greatest diplomatic success</a></h3>
+  <p class="source">Fiona Harvey in Paris <span class="timestamp"> – Dec 14, 2015</span></p>
+  <p>With all 196 nations having a say, the UN climate deal, with all its frustrations and drama, has proven that compromise works for the planet</p>
+
+  <h3><span class="comment" data-toggle="tooltip" data-placement="top" title="Breaking news teaser"><i class="fa fa-bullhorn headline-icon"></i></span> <a href="http://www.theguardian.com/sustainable-business/2016/jan/24/sustainability-cop21-job-market-paris-climate-change-white-house-environment">Want to do good at work? Here's where to find a job in the sustainability market</a></h3>
+  <img class="thumbnail" src="assets/img/the-Guardian-want-to-do-good-at-work-3835-h200.jpg" width="166" height="100" border="0" alt="" style="float:left; margin-right: 10px;">
+  <p class="source"><span class="timestamp"><i class="fa fa-bullhorn headline-icon"></i> Breaking news – </span>Bruce Watson and Ellen Weinreb<span class="timestamp"> – Jan 24, 2016</span></p>
+  <p>The historic COP21 agreement is poised to create a jump in sustainability hiring. Here are four areas of the job market expected to grow significantly in five years</p>
+
+  <div class="clearfix"></div>
+
+  <hr/>
+
+  <h3 class="standard-type"><i class="fa fa-newspaper-o headline-icon"></i> Articles</h3>
+  <ul class="list-unstyled">
+    <li>
+      <img class="thumbnail" src="assets/img/the-Guardian-Paris-climate-change-deal-too-weak-to-help-poor-critics-warn-5616-h200.jpg" width="166" height="100" border="0" alt="" style="float:left; margin-right: 10px;">
+      <h4><a href="http://www.theguardian.com/environment/2015/dec/14/paris-climate-change-deal-cop21-oxfam-actionaid">Paris climate change deal too weak to help poor, critics warn</a></h4>
+      <p class="source">Fiona Harvey<span class="timestamp"> – Dec 14, 2015</span></p>
+      <p>COP21 agreement excludes poor and fails to put humanity’s interests above short-term goals, say environmentalists and financial experts</p>
+    </li>
+    <li>
+      <h4><a href="http://www.theguardian.com/environment/live/2015/dec/12/paris-climate-talks-francois-hollande-to-join-summit-as-final-draft-published-live">Governments adopt historic deal – as it happened</a></h4>
+      <p class="source">Adam Vaughan in Paris and James Randerson<span class="timestamp"> – Dec 12, 2015</span></p>
+    </li>
+    <li>
+      <h4><a href="http://www.theguardian.com/environment/2015/dec/08/cop21-is-too-male-dominated-and-has-male-priorities-says-un-special-envoy">COP21 is too male dominated and has male priorities, says UN special envoy</a></h4>
+      <p class="source">Fiona Harvey in Paris<span class="timestamp"> – Dec 8, 2015</span></p>
+    </li>
+  </ul>
+  <a href="#">More news articles about COP 21</a>
+
+  <hr/>
+
+  <h3><i class="fa fa-television headline-icon"></i> News broadcasts</h3>
+  <ul>
+    <li>[First broadcast]</li>
+    <li>[Broadcast]</li>
+    <li>[Broadcast]</li>
+  </ul>
+  <a href="#">More news broadcasts about COP 21</a>
+
+  <hr/>
+
+  <h3><i class="fa fa-pagelines headline-icon"></i> Highly relevant result</h3>
+  <p>Teaser clearly showing why this is so relevant. This content does normally belong in one of the result groups, but is rendered individually for visibility purposes since it is deemed so relevant.</p>
+
+  <hr/>
+
+  <h3><span class="comment" data-toggle="tooltip" data-placement="top" title="TV programmes teaser. For now, content that would have spanned multiple lines is truncated. When Bootstrap 4 enters beta (assumedly spring 2016), this behaviour can change without using additional CSS to have attractive vertical alignment of boxes with varying amounts of content."><i class="fa fa-television headline-icon"></i></span> TV programmes</h3>
+  <ul class="list-inline" style="margin-top: 10px; margin-bottom: -10px;">
+    <li><div class="thumbnail" style="max-width: 184px;"><img src="assets/img/En-lang-klimareise-til-Paris-h200.jpg" height="100" width="178">
+    <a href="http://www.nrk.no/urix/en-lang-klimareise-til-paris-1.12699954"><h4 class="truncate">A long journey to Paris</h4></a>
+    <p class="source truncate">NRK Daily news<span class="timestamp"> - Dec 13 2015</span></p>
+    </div></li>
+    <li><div class="thumbnail" style="max-width: 184px;" ><img src="assets/img/Paris-avtalen-er-vedtatt-Dette-er-stort-h200.jpg" width="178" height="100">
+    <a href="http://www.nrk.no/urix/paris-avtalen-er-vedtatt_-_-dette-er-stort-1.12701516"><h4 class="truncate">Paris agreement ratified: – A great achievement!</h4></a>
+    <p class="source truncate">NRK Daily news<span class="timestamp"> - Dec 13 2015</span></p>
+    </div></li>
+    <li><div class="thumbnail" style="max-width: 184px;" ><img src="assets/img/Noen-som-har-lyst-paa-sjampanje-h200.jpg" height="100" width="178">
+    <a href="http://www.nrk.no/urix/_-noen-som-har-lyst-pa-sjampanje_-1.12701564"><h4 class="truncate">– Anybody for champagne?</h4></a>
+    <p class="source truncate">NRK Daily news<span class="timestamp"> - Dec 13 2015</span></p>
+    </div></li>
+  </ul>
+  <a href="#">More TV programmes about COP 21</a>
+
+
+  <hr/>
+
+  <h3><i class="fa fa-rss headline-icon" style="transform: rotate(45deg)"></i> Radio programmes</h3>
+  <ul class="list-unstyled">
+    <li>
+      <h4><a href="https://radio.nrk.no/serie/fritimen/muhr42211715/19-12-2015#t=13m47s">Ex-minister Sundtoft on Paris</a></h4>
+      <p><a href="https://radio.nrk.no/serie/fritimen/muhr42211715/19-12-2015#t=13m47s" class="btn btn-info btn-xs"><i class="fa fa-rss" style="transform: rotate(45deg)"></i>0:10</a> <i class="fa fa-cc"></i> <span class="source">The Break with Berg &amp; Svabø</span> <span class="timestamp">–  Dec 19, 2015</span></p>
+    </li>
+    <li>
+      <h4><a href="https://radio.nrk.no/serie/broensj/dmpa08004815/29-11-2015#t=36m1s">Kids travel to the Paris climate talks</a></h4>
+      <p><a href="https://radio.nrk.no/serie/broensj/dmpa08004815/29-11-2015#t=36m1s" class="btn btn-info btn-xs"><i class="fa fa-rss" style="transform: rotate(45deg)"></i>0:08</a> <i class="fa fa-cc"></i> <span class="source">Brønsj</span> <span class="timestamp">–  Nov 29, 2015</span></p>
+    </li>
+    <li>
+      <h4><a href="https://radio.nrk.no/serie/her-og-naa-hovedsending/dmnh01024315/09-12-2015#t=20m52s">Climate agreement drafted in Paris</a></h4>
+      <p><a href="https://radio.nrk.no/serie/her-og-naa-hovedsending/dmnh01024315/09-12-2015#t=20m52s" class="btn btn-info btn-xs"><i class="fa fa-rss" style="transform: rotate(45deg)"></i>0:03</a> <i class="fa fa-cc"></i> <span class="source">Here &amp; now with Erik Skarrud</span> <span class="timestamp">–  Dec 9, 2015</span></p>
+    </li>
+  </ul>
+  <a href="#">More radio programmes about COP 21</a>
+
+  <hr/>
+
+  <h3><i class="fa fa-pencil headline-icon"></i> Opinions</h3>
+  <ul class="list-unstyled">
+    <li>
+      <div class="thumbnail" style="float:left; margin-right: 10px;"><img src="assets/img/the-Guardian-saving-the-planet-in-a-fracturing-world-3488-h200.jpg" width="166" height="100" border="0" alt=""></div>
+      <h4><a href="http://www.theguardian.com/commentisfree/2015/dec/13/the-guardian-view-on-cop-21-climate-talks-saving-the-planet-in-a-fracturing-world">Saving the planet in a fracturing world</a></h4>
+      <p class="source">Editorial<span class="timestamp"> – Dec 13, 2015</span></p>
+      <p>Globalisation has been spinning into reverse. But the Paris talks illustrate the potential of determined diplomacy between jealously sovereign states</p>
+    </li>
+    <li>
+      <h4><a href="http://www.theguardian.com/commentisfree/2015/oct/04/the-guardian-view-on-the-paris-climate-change-summit-reasons-to-be-cheerful">Reasons to be cheerful</a></h4>
+      <p class="source">Editorial<span class="timestamp"> – Oct 4, 2015</span></p>
+    </li>
+    <li><h4><a href="http://www.theguardian.com/commentisfree/2015/nov/18/the-guardian-view-on-paris-terror-and-climate-change-shaping-the-future">Shaping the future</a></h4>
+      <p class="source">Editorial<span class="timestamp"> – Nov 18, 2015</span></p></li>
+  </ul>
+  <a href="#">More opinions about COP 21</a>
+
+  <hr/>
+
+  <h3><i class="fa fa-user headline-icon"></i> Experts</h3>
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="#">NRK journalists</a></li>
+    <li role="presentation"><a href="#">Scientists</a></li>
+    <li role="presentation" class="hidden-xs"><a href="#">NGO representatives</a></li>
+    <li role="presentation" class="hidden-xs"><a href="#">Politicians, businesspeople &amp; pundits</a></li>
+    <li role="presentation"><a href="#">Others…</a></li>
+  </ul>
+  <ul>
+    <li>[First expert]</li>
+    <li>[Expert]</li>
+    <li>[Expert]</li>
+  </ul>
+  <a href="#">More experts on COP 21</a>
+
+</div><!-- col -->
+</div><!-- row -->
+<div class="row">
+<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">  
+
+  <h3><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square headline-icon"></i> Add a missing result</a></h3>
+
+  <p>Is some content missing? Go ahead and add it!</p>
+
+</div><!-- col -->
+<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">  
+
+  <h3><i class="fa fa-plus-square headline-icon"></i> Add a missing source</h3>
+  <p>Yes, you can add an entirely new source to these results. The source can be visible only to you, or you can suggest it also for other people.</p>
+
+</div><!-- col -->
+<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">  
+
+  <h3><i class="fa fa-question-circle headline-icon"></i> Request help</h3>
+  <p>Are you unhappy with what you found? <a href="#">Chat with us</a> and we'll go looking together with you! This service is provided in collaboration with the <a href="http://www.ub.uio.no/english/">University of Oslo Library</a>.</p>
+
+</div><!-- col -->
+<div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">  
+
+  <h3><i class="fa fa-retweet headline-icon"></i> Reuse our content</h3>
+  <p>From May 2016, NRK will forfeit copyright on all its textual articles<sup>1</sup> and switch to a Public Domain model using <a href="http://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution-ShareAlike 4.0 International License">CC-BY-SA</abbr></a>. Visit our <a href="http://www.nrk.no/etikk/opphavsrett-pa-nrk.no-1.2843522">content reuse portal</a> for practical tips. Shortcuts for sharing this result in <abbr title="JavaScript Object Notation">JSON</abbr> form: <a href="#">dynamic</a>, <a href="#">static</a>.</p>
+
+</div><!-- col -->
+
+<div class="col-xs-6 col-sm-push-5 col-sm-5 col-md-push-0 col-md-4 col-lg-push-9 col-lg-3">
+  <p><br/><sup>1</sup><small>Content written by our own journalists, currently or previously employed, both freelancers and permanent employees. Whenever the article's author has an e-mail address ending with @nrk.no, you are free to reuse the text.</small></p>
+</div><!-- col -->
+
+</div><!-- row -->
+<div class="row">
+<div class="col-md-12">  
+
+<div id="colophon" style="margin: 0px -15px -30px -15px; padding: 10px 15px 30px 15px;">
+  <h2 style="font-weight: 200;">Search result mock-up</h2>
+  <p>Click the «about» link on the top of the page for details about this mock-up.</p>
+  <p>Suggested future license for <a href="https://en.wikipedia.org/wiki/NRK">NRK</a> (no affiliation): All written articles <a href="https://en.wikipedia.org/wiki/Copyleft">copylefted</a> under <a href="http://creativecommons.org/licenses/by-sa/4.0/"><abbr title="Creative Commons Attribution-ShareAlike 4.0 International License">CC-BY-SA</abbr></a> or <a href="http://data.norge.no/nlod/en/1.0"><abbr title="Norwegian Licence for Open Government Data">NLOD</abbr></a>. Other content, including photos and TV &amp; radio programmes: <a href="https://nrkbeta.no/2009/07/03/data-som-vi-alt-har-betalt-for/">As few rights reserved as possible</a>.</p>
+</div>
+</div><!-- col-md-12 -->
+</div><!-- row -->
+</div><!-- container-fluid -->
+.
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a missing result</h4>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="form-group">
+            <label for="title">Title *</label>
+            <input type="text" class="form-control" id="title" placeholder="The page or document title or a short description">
+          </div>
+          <div class="form-group">
+            <label for="url">URL</label>
+            <input type="text" class="form-control" id="URL" placeholder="www.something.com (if applicable)">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="A short summary that fits in a search result, approx. 140 characters long.">
+          </div>
+          <div class="form-group">
+            <label for="audience">Audience</label>
+            <select class="form-control" id="audience">
+              <option>Only myself</option>
+              <option>My work group</option>
+              <option>My colleagues</option>
+              <option>My clients</option>
+              <option>Everyone</option>
+            </select>
+          </div>
+          <span id="helpBlock" class="help-block">Consider <a href="#">logging in</a> before submitting. All suggested, public results will be moderated by peers. <a href="http://www.afterlife-knowledge.com/peermod.html">Read more</a>.</span>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add result</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <script type="text/javascript">
+    function loadEvents() {
+
+      // Hide comment styles on click
+      $( "#hide-comment-button" ).click(function() {
+        //$( ".comment" ).removeClass('comment');
+        $( "#resultSectionComment" ).remove();
+        $('.comment').contents().unwrap();
+      });
+
+      // Show autocomplete
+      $( "#main-search-input" ).focus(function() {
+        var addAutoCompleteWidthForSmallWindows = 0;
+        if ( $( window ).width() < 479 ) {
+          addAutoCompleteWidthForSmallWindows = 55;
+        }
+        $("#autocomplete-container").width( $("#main-search-input").width() + 26 
+          + addAutoCompleteWidthForSmallWindows );
+        $("#autocomplete-container").show(0);
+      });
+
+      // Hide autocomplete
+      $( "#main-search-input" ).focusout(function() {
+        $("#autocomplete-container").hide();
+      });
+
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      // Resize fluid tables
+      initFluidTables();
+    }
+  </script>
+
+  <!-- === jQuery & Bootstrap core JavaScript === -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Other plug-ins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.6.0/holder.min.js"></script>
+  <script src="assets/js/fluidTables.js"></script>
+  </body>
+</html>
