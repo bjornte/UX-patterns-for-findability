@@ -16,7 +16,7 @@ Tons of stuff is missing, including media assets. Bear with me as I learn myself
 Why?
 ---
 
-**The pain: Your users can’t find what they’re looking for.** When developing search solutions over the last 10 years, my experience has oftentimes been that features crucial to findability never make it into the actual services. With rotten findability<sup>(1)</sup> the entire content/knowledge management solution loses its usefulness.
+**The pain: Your users can’t find what they’re looking for.** When developing search solutions over the last 15 years, my experience has oftentimes been that features crucial to findability never make it into the actual services. With rotten findability<sup>(1)</sup> the entire content/knowledge management solution loses its usefulness.
 
 In contrast, when findability features are implemented, the results are great! Case in point, for the Norwegian Government Security and Service Organization, we won a [10 Best Intranets of 2019](https://www.nngroup.com/articles/intranet-design/) award from Nielsen Norman Group, who stated that it was _“a pleasure to experience the outstanding and innovative personalization and search functions ministering to ministry employees.”_.
 
