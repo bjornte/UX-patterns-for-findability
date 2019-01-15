@@ -18,7 +18,7 @@ Why?
 
 **The pain: Your client’s employees can’t find what they’re looking for.** When developing enterprise search solutions over the last 10 years, my experience has consistently been that features crucial to findability never make it into the actual services. With rotten findability<sup>(1)</sup> the entire content/knowledge management solution loses its usefulness. 
 
-**The response: At first, [a template](http://bit.ly/results-mock-up-snapshot-feb-2016) around which to have a conversation about UX and findability.** This repository tries to address the problem by being a starting point for teams building enterprise search solutions, showing UX and findability best practices, with an emphasis on:
+**The response: At first, a template around which to have a conversation about UX and findability.** This repository tries to address the problem by being a starting point for teams building enterprise search solutions, showing UX and findability best practices, with an emphasis on:
 
 * Disambiguation through 1) Result groups and 2) Autocomplete topics
 * User influenced relevancy & findability
