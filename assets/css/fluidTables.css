@@ -1,0 +1,44 @@
+/* 
+
+fluidTable ver 0.2 by Bjørn Tennøe
+===
+
+About: CSS and JavaScript (requires jQuery) for fluid tables, e.g. for displaying search result snippets with attribute-value pairs in a fluid layout.
+Lisence: CC-BY-SA (http://creativecommons.org/licenses/by-sa/4.0/)
+
+Files: 
+
+* fluidTable.css
+* fluidTable.js
+
+*/
+
+
+.fluid-table td {
+  padding-right: 5px;
+}
+
+.fluid-table td:nth-child(odd) {
+  color: rgb(119, 119, 119);  
+}
+
+.fluid-table-visible-target td>i {
+  font-style: inherit;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* .fluid-table-invisible-source must be slighly more padded than .fluid-table-visible-target due to IE bug */
+
+.fluid-table-invisible-source td:nth-child(even) {
+  color: rgb(30, 30, 30);  
+  padding-right: 10px;
+}
+
+.fluid-table-visible-target td:nth-child(even) {
+  color: rgb(30, 30, 30);  
+  padding-right: 9px;
+}
+
