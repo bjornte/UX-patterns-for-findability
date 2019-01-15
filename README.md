@@ -3,7 +3,7 @@ UX patterns for findability
 
 Templates for **search front ends** and **reporting tools** that allow you to **find what you’re looking for**.
 
-The initial template can be viewed [here](http://bit.ly/results-mock-up-snapshot-feb-2016), as hosted on Dropbox. The Pattern Lab equivalent is [here](http://bit.ly/UX-pattern-SERP).
+The initial template can be viewed [here](http://bjornte.github.io/UX-patterns-for-findability/results.html). A Pattern Lab equivalent is available.
 
 At inception this repository is a single template for a search engine result page («[SERP](https://en.wikipedia.org/wiki/Search_engine_results_page)») created my me (Bjørn T). Over time hopefully a library for [UX](https://en.wikipedia.org/wiki/User_experience_design)-driven [findability](https://en.wikipedia.org/wiki/Findability) maintained by, among others, you. I [have posted](https://discuss.elastic.co/t/ux-patterns-for-findability/43502) on Elastic’s forum to poll interest there.
 
